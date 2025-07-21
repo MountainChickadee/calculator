@@ -1,15 +1,19 @@
 function add(a, b) {
     return a + b;
 }
+
 function subtract(a, b) {
     return a - b;
 }
+
 function multiply(a, b) {
     return a * b;
 }
+
 function divide(a, b) {
     return a / b;
 }
+
 function operate(a, b, c) {
     switch (c) {
         case 1:
@@ -25,6 +29,6 @@ function operate(a, b, c) {
 
 let a = 2;
 let b = 3;
-let operator = 1;
+let op = 1;
 
-console.log(operate(a, b, operator));
+console.log(operate(a, b, op));
