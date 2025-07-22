@@ -1,11 +1,15 @@
 .container {
     display: flex;
+    flex-direction: column;
     border: 2px solid black;
     min-width: 360px;
     max-width: 50vw;
     box-sizing: border-box;
 }
 
+.pad {
+    display: flex;
+}
 .numbers {
     display: flex;
     border: 2px solid palegreen;
@@ -23,6 +27,11 @@
     flex-grow: 1;
     flex-basis: 25%;
 
+}
+
+.display {
+    border: 2px solid peru;
+    min-height: 50px;
 }
 
 button {
