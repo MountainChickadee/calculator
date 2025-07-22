@@ -14,28 +14,37 @@ function divide(a, b) {
     return a / b;
 }
 
-function operate(a, b, c) {
-    switch (c) {
-        case 1:
+function operate(a, b, op) {
+    switch (op) {
+        case 'add':
             return add(a, b);
-        case 2:
+        case 'sub':
             return subtract(a, b);
-        case 3:
+        case 'multi':
             return multiply(a, b);
-        case 4:
+        case 'div':
             return divide(a, b);
     }
 }
 
-function clickHandler(buttonID) {
-    console.log(buttonID);
+function onClick(buttonID) {
+    // gets type and value of input from id
+    inputList = buttonID.split('_')
+    inputType = inputList[0];
+    
+    inputType == 'int' ? inputValue = parseInt(inputList[1], 10) : inputValue = inputList[1];
+    console.log(inputValue + " " + inputType) 
+
+    // if (inputType == 'op')  || (inputValue == )
 }
 
-
+let firstInt = false;
+let action = false;
+let secondInt = false;
 
 let a = 2;
 let b = 3;
-let op = 1;
+let op = 'add';
 
 // runs the display output
 const display = document.querySelector(".display");
@@ -46,7 +55,7 @@ display.textContent = displayString;
 const buttons = document.querySelectorAll("button");
 // sets uo event listeners on each button
 buttons.forEach((button) => {
-    button.addEventListener("click",() => clickHandler(button.id));
+    button.addEventListener("click",() => onClick(button.id));
 })
 
 console.log(operate(a, b, op));
