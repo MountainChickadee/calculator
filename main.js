@@ -11,6 +11,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b === 0) return null;
     return a / b;
 }
 
@@ -27,15 +28,63 @@ function operate(a, b, op) {
     }
 }
 
+function resetCalc() {
+    firstInt = false;
+    action = false;
+    secondInt = false;
+
+    a = 0;
+    b = 0;
+    op = '';
+
+    displayString = '0';
+    display.textContent = displayString;
+}
+
 function onClick(buttonID) {
     // gets type and value of input from id
     inputList = buttonID.split('_')
     inputType = inputList[0];
-    
     inputType == 'int' ? inputValue = parseInt(inputList[1], 10) : inputValue = inputList[1];
-    console.log(inputValue + " " + inputType) 
 
-    // if (inputType == 'op')  || (inputValue == )
+    if (inputValue === 'clear') resetCalc();
+
+    if (inputType == 'int') {
+        if (firstInt === false) {
+            a = inputValue;
+            firstInt = true;
+            displayString = `${inputValue} `;
+            display.textContent = displayString;
+            return  
+        }
+        if (action === true && secondInt === false) {
+            b = inputValue;
+            secondInt = true;
+            displayString += `${inputValue} `;
+            display.textContent = displayString;
+            return  
+        }
+    }
+
+    if (inputType == 'op') {
+        if (firstInt === true && secondInt === false) {
+            c = inputValue;
+            action = true;
+            displayString += `${document.getElementById(buttonID).textContent} `;
+            display.textContent = displayString;
+            return  
+        }
+    }
+
+    if (inputValue == 'equals' && firstInt && action && secondInt) {
+        sum = operate(a, b, op);
+        displayString = `${sum}`;
+        display.textContent = displayString;
+        a = sum;
+        firstInt = true;
+        action = false;
+        secondInt = false;
+    }
 }
 
 let firstInt = false;
@@ -57,5 +106,3 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click",() => onClick(button.id));
 })
-
-console.log(operate(a, b, op));
