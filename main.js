@@ -32,6 +32,7 @@ function resetCalc() {
     firstInt = false;
     action = false;
     secondInt = false;
+    newCalc = true;
 
     a = 0;
     b = 0;
@@ -50,17 +51,31 @@ function onClick(buttonID) {
     if (inputValue === 'clear') resetCalc();
 
     if (inputType == 'int') {
-        if (firstInt === false) {
+        if (!firstInt && !action && !secondInt && newCalc)
+        {
             a = inputValue;
             firstInt = true;
             displayString = `${inputValue} `;
             display.textContent = displayString;
             return  
         }
+        if (firstInt && !action && !secondInt && newCalc)
+        {
+            a = parseInt((String(a) + String(inputValue)), 10);
+            displayString = `${a} `;
+            display.textContent = displayString;
+            return  
+        }
         if (action === true && secondInt === false) {
             b = inputValue;
             secondInt = true;
-            displayString += `${inputValue} `;
+            displayString += `${inputValue}`;
+            display.textContent = displayString;
+            return  
+        }
+        if (firstInt && action && secondInt) {
+            b = parseInt((String(b) + String(inputValue)), 10);
+            displayString = displayString.slice(0, -1) + b;
             display.textContent = displayString;
             return  
         }
@@ -84,12 +99,14 @@ function onClick(buttonID) {
         firstInt = true;
         action = false;
         secondInt = false;
+        newCalc = false;
     }
 }
 
 let firstInt = false;
 let action = false;
 let secondInt = false;
+let newCalc = true;
 
 let a = 0;
 let b = 0;
