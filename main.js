@@ -55,7 +55,7 @@ function onClick(buttonID) {
         {
             a = inputValue;
             firstInt = true;
-            displayString = `${inputValue} `;
+            displayString = `${inputValue}`;
             display.textContent = displayString;
             return  
         }
@@ -66,7 +66,7 @@ function onClick(buttonID) {
             display.textContent = displayString;
             return  
         }
-        if (action === true && secondInt === false) {
+        if (action && !secondInt) {
             b = inputValue;
             secondInt = true;
             displayString += `${inputValue}`;
@@ -82,10 +82,10 @@ function onClick(buttonID) {
     }
 
     if (inputType == 'op') {
-        if (firstInt === true && secondInt === false) {
+        if (firstInt && !secondInt) {
             op = inputValue;
             action = true;
-            displayString += `${document.getElementById(buttonID).textContent} `;
+            displayString += ` ${document.getElementById(buttonID).textContent} `;
             display.textContent = displayString;
             return  
         }

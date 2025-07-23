@@ -1,44 +1,61 @@
+* {
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+
+}
 .container {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 5px solid #264653;
     min-width: 360px;
     max-width: 50vw;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    background-color: #e76f51;
+    padding: 20px;
 }
 
 .pad {
     display: flex;
+    margin-top: 20px;
+    border: 3px solid #264653;
 }
 .numbers {
     display: flex;
-    border: 2px solid palegreen;
     flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
     flex-basis: 60%;
+    background-color: #2a9d8f;
+    padding: 5px;
+    border-right: 3px solid #264653;
 }
 
 .operators {
     display: flex;
-    border: 2px solid plum;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     flex-grow: 1;
     flex-basis: 25%;
+    background-color: #E9C46A;
+    padding: 5px;
 
 }
 
 .display {
-    border: 2px solid peru;
     min-height: 50px;
+    background-color: #E9C46A;
+    color: #264653;
+    text-align: end;
+    font-size: 75px;
+    padding-top: 10px;
 }
 
 button {
     margin: 3px;
     padding-top: 10px;
     padding-bottom: 10px;
-
+    background-color: #264653;
+    color: #f4a261;
+    font-size: 25px;
 }
 
 .numbers button {
