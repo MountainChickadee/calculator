@@ -1,6 +1,7 @@
 * {
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;
+    border-radius: 35px;
 
 }
 .container {
@@ -9,7 +10,6 @@
     border: 5px solid #264653;
     min-width: 360px;
     max-width: 50vw;
-    /* box-sizing: border-box; */
     background-color: #e76f51;
     padding: 20px;
 }
@@ -17,7 +17,8 @@
 .pad {
     display: flex;
     margin-top: 20px;
-    border: 3px solid #264653;
+    border: 5px solid #264653;
+    background-color: #264653;
 }
 .numbers {
     display: flex;
@@ -37,7 +38,7 @@
     flex-basis: 25%;
     background-color: #E9C46A;
     padding: 5px;
-
+    border-left: 3px solid #264653;
 }
 
 .display {
@@ -45,7 +46,7 @@
     background-color: #E9C46A;
     color: #264653;
     text-align: end;
-    font-size: 75px;
+    font-size: 70px;
     padding-top: 10px;
 }
 
@@ -55,7 +56,7 @@ button {
     padding-bottom: 10px;
     background-color: #264653;
     color: #f4a261;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .numbers button {
