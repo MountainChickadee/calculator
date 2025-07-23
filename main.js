@@ -68,7 +68,7 @@ function onClick(buttonID) {
 
     if (inputType == 'op') {
         if (firstInt === true && secondInt === false) {
-            c = inputValue;
+            op = inputValue;
             action = true;
             displayString += `${document.getElementById(buttonID).textContent} `;
             display.textContent = displayString;
@@ -91,9 +91,9 @@ let firstInt = false;
 let action = false;
 let secondInt = false;
 
-let a = 2;
-let b = 3;
-let op = 'add';
+let a = 0;
+let b = 0;
+let op = '';
 
 // runs the display output
 const display = document.querySelector(".display");
