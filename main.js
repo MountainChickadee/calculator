@@ -93,7 +93,7 @@ function onClick(buttonID) {
 
     if (inputValue == 'equals' && firstInt && action && secondInt) {
         sum = operate(a, b, op);
-        displayString = `${sum}`;
+        (sum % 1 === 0) ? sum = displayString = `${sum}` : displayString = `${sum.toFixed(6)}`;
         display.textContent = displayString;
         a = sum;
         firstInt = true;
